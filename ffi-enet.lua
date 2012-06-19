@@ -7,7 +7,8 @@ static const int ENET_VERSION = (((ENET_VERSION_MAJOR)<<16) | ((ENET_VERSION_MIN
 // SOCKET has different definitions on different systems (unsigned int on Windows, signed on Linux).
 // This is only provided for aligning structs. It's perfectly possible to avoid using the sockets directly.
 //typedef SOCKET ENetSocket;
-typedef int ENetSocket;
+typedef int SOCKET;
+typedef SOCKET ENetSocket;
 
 enum
 {
@@ -20,7 +21,7 @@ typedef struct
     void * data;
 } ENetBuffer;
 
-typedef fd_set ENetSocketSet;
+typedef struct fd_set ENetSocketSet; // Only used internally so doesn't really need to be exposed
 typedef uint8_t enet_uint8;
 typedef uint16_t enet_uint16;
 typedef uint32_t enet_uint32;
