@@ -11,7 +11,7 @@ typedef int ENetSocket;
 
 enum
 {
-    ENET_SOCKET_NULL = (SOCKET)(~0)
+    ENET_SOCKET_NULL = (ENetSocket)(~0)
 };
 
 typedef struct
